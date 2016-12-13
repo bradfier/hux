@@ -1,0 +1,306 @@
+{
+  "rsid": null,
+  "generatedAt": "2016-12-13T23:21:53.4529148+00:00",
+  "serviceType": 0,
+  "locationName": "Lewisham",
+  "crs": "LEW",
+  "operator": "Southeastern",
+  "operatorCode": "SE",
+  "isCancelled": false,
+  "cancelReason": null,
+  "delayReason": null,
+  "overdueMessage": null,
+  "length": 0,
+  "detachFront": false,
+  "isReverseFormation": false,
+  "platform": "1",
+  "sta": "23:01",
+  "eta": null,
+  "ata": "On time",
+  "std": "23:02",
+  "etd": null,
+  "atd": "On time",
+  "adhocAlerts": null,
+  "previousCallingPoints": [
+    {
+      "callingPoint": [
+        {
+          "locationName": "London Cannon Street",
+          "crs": "CST",
+          "st": "21:47",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Deptford",
+          "crs": "DEP",
+          "st": "21:57",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Greenwich",
+          "crs": "GNW",
+          "st": "21:59",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Maze Hill",
+          "crs": "MZH",
+          "st": "22:02",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Westcombe Park",
+          "crs": "WCB",
+          "st": "22:04",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Charlton",
+          "crs": "CTN",
+          "st": "22:06",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Woolwich Dockyard",
+          "crs": "WWD",
+          "st": "22:09",
+          "et": null,
+          "at": "22:11",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Woolwich Arsenal",
+          "crs": "WWA",
+          "st": "22:12",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Plumstead",
+          "crs": "PLU",
+          "st": "22:14",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Abbey Wood",
+          "crs": "ABW",
+          "st": "22:17",
+          "et": null,
+          "at": "22:19",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Belvedere",
+          "crs": "BVD",
+          "st": "22:20",
+          "et": null,
+          "at": "22:22",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Erith",
+          "crs": "ERH",
+          "st": "22:22",
+          "et": null,
+          "at": "22:25",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Slade Green",
+          "crs": "SGR",
+          "st": "22:26",
+          "et": null,
+          "at": "22:28",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Crayford",
+          "crs": "CRY",
+          "st": "22:36",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Bexley",
+          "crs": "BXY",
+          "st": "22:39",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Albany Park",
+          "crs": "AYP",
+          "st": "22:42",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Sidcup",
+          "crs": "SID",
+          "st": "22:45",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "New Eltham",
+          "crs": "NEH",
+          "st": "22:48",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Mottingham",
+          "crs": "MTG",
+          "st": "22:50",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Lee",
+          "crs": "LEE",
+          "st": "22:53",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "Hither Green",
+          "crs": "HGR",
+          "st": "22:56",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        }
+      ],
+      "serviceType": 0,
+      "serviceChangeRequired": false,
+      "assocIsCancelled": false
+    }
+  ],
+  "subsequentCallingPoints": [
+    {
+      "callingPoint": [
+        {
+          "locationName": "St Johns",
+          "crs": "SAJ",
+          "st": "23:04",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "New Cross",
+          "crs": "NWX",
+          "st": "23:06",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        },
+        {
+          "locationName": "London Cannon Street",
+          "crs": "CST",
+          "st": "23:17",
+          "et": null,
+          "at": "On time",
+          "isCancelled": false,
+          "length": 0,
+          "detachFront": false,
+          "adhocAlerts": null
+        }
+      ],
+      "serviceType": 0,
+      "serviceChangeRequired": false,
+      "assocIsCancelled": false
+    }
+  ]
+}
