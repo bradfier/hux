@@ -1,5 +1,7 @@
 package hux
 
+// Go models for data returned via the Huxley endpoint proxy
+
 type CallingPoint struct {
 	AT           string `json:"at"`
 	AdhocAlerts  string `json:"adhocAlerts"`
