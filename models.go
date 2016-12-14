@@ -85,3 +85,8 @@ type SubsequentCallingPoints struct {
 	ServiceChangeRequired bool           `json:"serviceChangeRequired"`
 	ServiceType           int            `json:"serviceType"`
 }
+
+type CRSStationCode struct {
+	StationName string `json:"stationName"`
+	CRSCode     string `json:"crsCode"`
+}

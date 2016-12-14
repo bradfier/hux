@@ -1,6 +1,7 @@
 package hux
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -17,4 +18,23 @@ func NewHux(baseURI, accessToken string) *hux {
 func (hux *hux) sendRequest(uri string) (resp *http.Response, err error) {
 	uri = fmt.Sprintf("%s%s?accessToken=%s", hux.baseURI, uri, hux.accessToken)
 	return http.Get(uri)
+}
+
+func (hux *hux) GetCRSCodes(filter string) (stationCodes *[]CRSStationCode, err error) {
+	uri := "/crs/" + filter
+	resp, err := hux.sendRequest(uri)
+
+	if err != nil {
+		return stationCodes, err
+	}
+
+	if err := json.NewDecoder(resp.Body).Decode(&stationCodes); err != nil {
+		return stationCodes, err
+	}
+
+	return stationCodes, err
+}
+
+func (hux *hux) GetAllCRSCodes() (stationCodes *[]CRSStationCode, err error) {
+	return hux.GetCRSCodes("")
 }
