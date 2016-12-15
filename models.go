@@ -95,3 +95,9 @@ type CRSStationCode struct {
 	StationName string `json:"stationName"`
 	CRSCode     string `json:"crsCode"`
 }
+
+type boardResponse struct {
+	TrainServices []TrainService `json:"trainServices"`
+	busServices   bool           `json:"busServices"`
+	CRS           string         `json:"crs"`
+}

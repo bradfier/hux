@@ -49,3 +49,24 @@ func TestJSONDecoder(t *testing.T) {
 		t.Fatal("Didn't get CRS code for station.")
 	}
 }
+
+func TestGetDeparture(t *testing.T) {
+	accessToken, baseUri, err := getTestEnvironment()
+
+	if err != nil {
+		t.Skip(err)
+	}
+
+	hux := NewHux(baseUri, accessToken)
+	hq := new(HuxQueryBuilder).QueryStation("KGX").Build()
+
+	ts, err := hux.GetDepartures(hq)
+
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if ts == nil {
+		t.Error("no departures decoded")
+	}
+}

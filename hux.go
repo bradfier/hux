@@ -38,3 +38,17 @@ func (hux *hux) GetCRSCodes(filter string) (stationCodes *[]CRSStationCode, err 
 func (hux *hux) GetAllCRSCodes() (stationCodes *[]CRSStationCode, err error) {
 	return hux.GetCRSCodes("")
 }
+
+func (hux *hux) GetDepartures(hq huxQuery) (ts *boardResponse, err error) {
+	uri := fmt.Sprintf("/departures/%s", hq)
+
+	resp, err := hux.sendRequest(uri)
+
+	if err != nil {
+		return
+	}
+
+	err = json.NewDecoder(resp.Body).Decode(&ts)
+
+	return ts, err
+}
