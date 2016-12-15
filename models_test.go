@@ -16,7 +16,7 @@ func TestJSONUnmarshal(t *testing.T) {
 	var sd ServiceDetails
 
 	if err := json.Unmarshal(dat, &sd); err != nil {
-		t.Errorf("Failed to unmarshal JSON: {}", err)
+		t.Errorf("Failed to unmarshal JSON: %s", err)
 	}
 
 	if len(sd.SubsequentCallingPoints[0].CallingPoint) != 3 ||

@@ -1,5 +1,9 @@
 package hux
 
+import (
+	"time"
+)
+
 // Go models for data returned via the Huxley endpoint proxy
 
 type CallingPoint struct {
@@ -48,6 +52,7 @@ type TrainService struct {
 }
 
 type ServiceDetails struct {
+	GeneratedAt             time.Time                 `json:"generatedAt"`
 	ATA                     string                    `json:"ata"`
 	ATD                     string                    `json:"atd"`
 	AdhocAlerts             string                    `json:"adhocAlerts"`

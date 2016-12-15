@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func getTestEnvironement() (accessToken string, baseUri string, err error) {
+func getTestEnvironment() (accessToken string, baseUri string, err error) {
 	accessToken = os.Getenv("HUX_ACCESS_TOKEN")
 	baseUri = os.Getenv("HUX_URI")
 
@@ -17,7 +17,7 @@ func getTestEnvironement() (accessToken string, baseUri string, err error) {
 }
 
 func TestHTTPRequest(t *testing.T) {
-	accessToken, baseUri, err := getTestEnvironement()
+	accessToken, baseUri, err := getTestEnvironment()
 
 	if err != nil {
 		t.Skip(err)
@@ -32,7 +32,7 @@ func TestHTTPRequest(t *testing.T) {
 }
 
 func TestJSONDecoder(t *testing.T) {
-	accessToken, baseUri, err := getTestEnvironement()
+	accessToken, baseUri, err := getTestEnvironment()
 
 	if err != nil {
 		t.Skip(err)
