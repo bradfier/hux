@@ -18,15 +18,7 @@ type CallingPoint struct {
 	ST           string `json:"st"`
 }
 
-type Destination struct {
-	AssocIsCancelled bool   `json:"assocIsCancelled"`
-	CRS              string `json:"crs"`
-	FutureChangeTo   string `json:"futureChangeTo"`
-	LocationName     string `json:"locationName"`
-	Via              string `json:"via"`
-}
-
-type Origin struct {
+type Station struct {
 	AssocIsCancelled bool   `json:"assocIsCancelled"`
 	CRS              string `json:"crs"`
 	FutureChangeTo   string `json:"futureChangeTo"`
@@ -35,20 +27,20 @@ type Origin struct {
 }
 
 type TrainService struct {
-	AdhocAlerts         string        `json:"adhocAlerts"`
-	Origin              []Origin      `json:"origin"`
-	Destination         []Destination `json:"destination"`
-	CurrentOrigins      string        `json:"currentOrigins"`
-	CurrentDestinations string        `json:"currentDestinations"`
-	ETA                 string        `json:"eta"`
-	ETD                 string        `json:"eta"`
-	IsCircularRoute     bool          `json:"isCircularRoute"`
-	OperatorCode        string        `json:"operatorCode"`
-	Operator            string        `json:"operator"`
-	Platform            string        `json:"platform"`
-	ServiceID           string        `json:"serviceID"`
-	STA                 string        `json:"sta"`
-	STD                 string        `json:"std"`
+	AdhocAlerts         string    `json:"adhocAlerts"`
+	Origin              []Station `json:"origin"`
+	Destination         []Station `json:"destination"`
+	CurrentOrigins      []Station `json:"currentOrigins"`
+	CurrentDestinations []Station `json:"currentDestinations"`
+	ETA                 string    `json:"eta"`
+	ETD                 string    `json:"eta"`
+	IsCircularRoute     bool      `json:"isCircularRoute"`
+	OperatorCode        string    `json:"operatorCode"`
+	Operator            string    `json:"operator"`
+	Platform            string    `json:"platform"`
+	ServiceID           string    `json:"serviceID"`
+	STA                 string    `json:"sta"`
+	STD                 string    `json:"std"`
 }
 
 type ServiceDetails struct {
