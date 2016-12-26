@@ -66,3 +66,25 @@ func (hux *Hux) GetArrivals(hq huxQuery) (ts *boardResponse, err error) {
 	err = hux.doRequest(uri, ts)
 	return
 }
+
+func (hux *Hux) GetAll(hq huxQuery) (ts *boardResponse, err error) {
+	ts = new(boardResponse)
+	uri := fmt.Sprintf("/all/%s", hq)
+	err = hux.doRequest(uri, ts)
+	return
+}
+
+func (hux *Hux) GetNext(hq huxQuery) (ts *boardResponse, err error) {
+	ts = new(boardResponse)
+	uri := fmt.Sprintf("/next/%s", hq)
+	err = hux.doRequest(uri, ts)
+	return
+}
+
+func (hux *Hux) GetFastest(hq huxQuery) (ts *boardResponse, err error) {
+	ts = new(boardResponse)
+	uri := fmt.Sprintf("/fastest/%s", hq)
+	err = hux.doRequest(uri, ts)
+	return
+}
+
