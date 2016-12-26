@@ -5,7 +5,7 @@ import (
 )
 
 func TestQueryBuilder(t *testing.T) {
-	hqb := new(HuxQueryBuilder)
+	hqb := new(QueryBuilder)
 	hq := hqb.QueryStation("KGX").FilterFrom().FilterStation("CBG").Build()
 
 	if hq != "/KGX/from/CBG" {

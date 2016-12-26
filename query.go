@@ -6,39 +6,39 @@ import (
 
 type huxQuery string
 
-type HuxQueryBuilder struct {
+type QueryBuilder struct {
 	queryStation    string
 	filterDirection string
 	filterStation   string
 	numRows         int
 }
 
-func (qb *HuxQueryBuilder) QueryStation(station string) *HuxQueryBuilder {
+func (qb *QueryBuilder) QueryStation(station string) *QueryBuilder {
 	qb.queryStation = station
 	return qb
 }
 
-func (qb *HuxQueryBuilder) FilterTo() *HuxQueryBuilder {
+func (qb *QueryBuilder) FilterTo() *QueryBuilder {
 	qb.filterDirection = "to"
 	return qb
 }
 
-func (qb *HuxQueryBuilder) FilterFrom() *HuxQueryBuilder {
+func (qb *QueryBuilder) FilterFrom() *QueryBuilder {
 	qb.filterDirection = "from"
 	return qb
 }
 
-func (qb *HuxQueryBuilder) FilterStation(station string) *HuxQueryBuilder {
+func (qb *QueryBuilder) FilterStation(station string) *QueryBuilder {
 	qb.filterStation = station
 	return qb
 }
 
-func (qb *HuxQueryBuilder) NumRows(rows int) *HuxQueryBuilder {
+func (qb *QueryBuilder) NumRows(rows int) *QueryBuilder {
 	qb.numRows = rows
 	return qb
 }
 
-func (qb *HuxQueryBuilder) Build() huxQuery {
+func (qb *QueryBuilder) Build() huxQuery {
 	if qb.queryStation == "" {
 		panic("Query station must be set")
 	}

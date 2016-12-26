@@ -6,24 +6,24 @@ import (
 	"testing"
 )
 
-func getTestEnvironment() (accessToken string, baseUri string, err error) {
+func getTestEnvironment() (accessToken string, baseURI string, err error) {
 	accessToken = os.Getenv("HUX_ACCESS_TOKEN")
-	baseUri = os.Getenv("HUX_URI")
+	baseURI = os.Getenv("HUX_URI")
 
-	if accessToken == "" || baseUri == "" {
-		err = errors.New("HUX_ACCESS_TOKEN and HUX_URI must be defined to test requests.")
+	if accessToken == "" || baseURI == "" {
+		err = errors.New("HUX_ACCESS_TOKEN and HUX_URI must be defined to test requests")
 	}
 	return
 }
 
 func TestHTTPRequest(t *testing.T) {
-	accessToken, baseUri, err := getTestEnvironment()
+	accessToken, baseURI, err := getTestEnvironment()
 
 	if err != nil {
 		t.Skip(err)
 	}
 
-	hux := NewHux(baseUri, accessToken)
+	hux := NewHux(baseURI, accessToken)
 	_, err = hux.sendRequest("/all/KGX")
 
 	if err != nil {
@@ -32,13 +32,13 @@ func TestHTTPRequest(t *testing.T) {
 }
 
 func TestJSONDecoder(t *testing.T) {
-	accessToken, baseUri, err := getTestEnvironment()
+	accessToken, baseURI, err := getTestEnvironment()
 
 	if err != nil {
 		t.Skip(err)
 	}
 
-	hux := NewHux(baseUri, accessToken)
+	hux := NewHux(baseURI, accessToken)
 	crs, err := hux.GetCRSCodes("Kings Cross")
 
 	if err != nil {
@@ -51,14 +51,14 @@ func TestJSONDecoder(t *testing.T) {
 }
 
 func TestGetDeparture(t *testing.T) {
-	accessToken, baseUri, err := getTestEnvironment()
+	accessToken, baseURI, err := getTestEnvironment()
 
 	if err != nil {
 		t.Skip(err)
 	}
 
-	hux := NewHux(baseUri, accessToken)
-	hq := new(HuxQueryBuilder).QueryStation("KGX").Build()
+	hux := NewHux(baseURI, accessToken)
+	hq := new(QueryBuilder).QueryStation("KGX").Build()
 
 	ts, err := hux.GetDepartures(hq)
 

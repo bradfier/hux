@@ -22,7 +22,7 @@ func main() {
 	uri := "http://huxley.mydomain.com"
 
 	hux_conn := hux.NewHux(uri, accessToken)
-	hq := new(hux.HuxQueryBuilder).QueryStation("KGX").NumRows(10).Build()
+	hq := new(hux.QueryBuilder).QueryStation("KGX").NumRows(10).Build()
 
 	ts, err := hux_conn.GetDepartures(hq)
 
