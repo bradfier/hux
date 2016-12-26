@@ -1,4 +1,5 @@
 # Hux
+[![GoDoc](https://godoc.org/github.com/bradfier/hux?status.svg)](https://godoc.org/github.com/bradfier/hux)
 [![Build Status](https://travis-ci.org/bradfier/hux.svg?branch=master)](https://travis-ci.org/bradfier/hux)
 
 Golang bindings for the [Huxley](https://huxley.unop.uk/) JSON proxy by [James Singleton](https://github.com/jpsingleton)
