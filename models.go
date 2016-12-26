@@ -88,7 +88,7 @@ type CRSStationCode struct {
 	CRSCode     string `json:"crsCode"`
 }
 
-type boardResponse struct {
+type BoardResponse struct {
 	TrainServices []TrainService `json:"trainServices"`
 	busServices   bool           `json:"busServices"`
 	CRS           string         `json:"crs"`

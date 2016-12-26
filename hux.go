@@ -1,3 +1,4 @@
+// Package hux provides Go bindings for the Huxley National Rail API proxy.
 package hux
 
 import (
@@ -6,11 +7,13 @@ import (
 	"net/http"
 )
 
+// Hux holds the connection details for the Huxley proxy in use.
 type Hux struct {
 	baseURI     string
 	accessToken string
 }
 
+// NewHux returns a Hux with the internal fields populated
 func NewHux(baseURI, accessToken string) *Hux {
 	return &Hux{baseURI, accessToken}
 }
@@ -34,6 +37,8 @@ func (hux *Hux) doRequest(uri string, data interface{}) error {
 	return err
 }
 
+// GetCRSCodes returns a slice of CRSStationCodes matching the supplied
+// filter string. An empty filter string will return all CRS Codes in the National Rail database.
 func (hux *Hux) GetCRSCodes(filter string) (stationCodes *[]CRSStationCode, err error) {
 	uri := "/crs/" + filter
 	resp, err := hux.sendRequest(uri)
@@ -49,40 +54,42 @@ func (hux *Hux) GetCRSCodes(filter string) (stationCodes *[]CRSStationCode, err 
 	return stationCodes, err
 }
 
+// GetAllCRSCodes returns a slice containing all CRS codes in the National Rail database,
+// it is functionally equivalent to calling GetCRSCodes with an empty string as the parameter.
 func (hux *Hux) GetAllCRSCodes() (stationCodes *[]CRSStationCode, err error) {
 	return hux.GetCRSCodes("")
 }
 
-func (hux *Hux) GetDepartures(hq huxQuery) (ts *boardResponse, err error) {
-	ts = new(boardResponse)
+func (hux *Hux) GetDepartures(hq huxQuery) (ts *BoardResponse, err error) {
+	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/departures/%s", hq)
 	err = hux.doRequest(uri, ts)
 	return
 }
 
-func (hux *Hux) GetArrivals(hq huxQuery) (ts *boardResponse, err error) {
-	ts = new(boardResponse)
+func (hux *Hux) GetArrivals(hq huxQuery) (ts *BoardResponse, err error) {
+	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/arrivals/%s", hq)
 	err = hux.doRequest(uri, ts)
 	return
 }
 
-func (hux *Hux) GetAll(hq huxQuery) (ts *boardResponse, err error) {
-	ts = new(boardResponse)
+func (hux *Hux) GetAll(hq huxQuery) (ts *BoardResponse, err error) {
+	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/all/%s", hq)
 	err = hux.doRequest(uri, ts)
 	return
 }
 
-func (hux *Hux) GetNext(hq huxQuery) (ts *boardResponse, err error) {
-	ts = new(boardResponse)
+func (hux *Hux) GetNext(hq huxQuery) (ts *BoardResponse, err error) {
+	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/next/%s", hq)
 	err = hux.doRequest(uri, ts)
 	return
 }
 
-func (hux *Hux) GetFastest(hq huxQuery) (ts *boardResponse, err error) {
-	ts = new(boardResponse)
+func (hux *Hux) GetFastest(hq huxQuery) (ts *BoardResponse, err error) {
+	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/fastest/%s", hq)
 	err = hux.doRequest(uri, ts)
 	return
