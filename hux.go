@@ -60,6 +60,8 @@ func (hux *Hux) GetAllCRSCodes() (stationCodes *[]CRSStationCode, err error) {
 	return hux.GetCRSCodes("")
 }
 
+// GetDepartures returns a BoardResponse containing the departing trains which match the criteria
+// specified in the query.
 func (hux *Hux) GetDepartures(hq huxQuery) (ts *BoardResponse, err error) {
 	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/departures/%s", hq)
@@ -67,6 +69,8 @@ func (hux *Hux) GetDepartures(hq huxQuery) (ts *BoardResponse, err error) {
 	return
 }
 
+// GetArrivals returns a BoardResponse containing the arriving trains which match the criteria
+// specified in the query.
 func (hux *Hux) GetArrivals(hq huxQuery) (ts *BoardResponse, err error) {
 	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/arrivals/%s", hq)
@@ -74,6 +78,8 @@ func (hux *Hux) GetArrivals(hq huxQuery) (ts *BoardResponse, err error) {
 	return
 }
 
+// GetAll returns a BoardResponse containing all the trains which match the criteria
+// specified in the query.
 func (hux *Hux) GetAll(hq huxQuery) (ts *BoardResponse, err error) {
 	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/all/%s", hq)
@@ -81,6 +87,8 @@ func (hux *Hux) GetAll(hq huxQuery) (ts *BoardResponse, err error) {
 	return
 }
 
+// GetNext returns a BoardResponse containing the next train which matches the critera
+// specified in the query.
 func (hux *Hux) GetNext(hq huxQuery) (ts *BoardResponse, err error) {
 	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/next/%s", hq)
@@ -88,6 +96,8 @@ func (hux *Hux) GetNext(hq huxQuery) (ts *BoardResponse, err error) {
 	return
 }
 
+// GetFastest returns a BoardResponse containing the train which will arrive first at
+// the destination specified in the query.
 func (hux *Hux) GetFastest(hq huxQuery) (ts *BoardResponse, err error) {
 	ts = new(BoardResponse)
 	uri := fmt.Sprintf("/fastest/%s", hq)
