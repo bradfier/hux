@@ -58,7 +58,7 @@ func TestGetDeparture(t *testing.T) {
 	}
 
 	hux := NewHux(baseURI, accessToken)
-	hq := new(QueryBuilder).QueryStation("KGX").Build()
+	hq := new(HuxQueryBuilder).QueryStation("KGX").Build()
 
 	ts, err := hux.GetDepartures(hq)
 
