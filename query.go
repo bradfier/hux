@@ -6,47 +6,64 @@ import (
 
 type huxQuery string
 
-// QueryBuilder constructs a filter string, allowing the caller to specify optional
-// filters for the departure board data.
-type QueryBuilder struct {
+// HuxQueryBuilder constructs a formatted URI query string for use with
+// the Huxley API proxy, using a builder pattern to set the required
+// and optional parameters. For instance, to query all trains departing
+// London Kings Cross (KGX) bound for Cambridge (CBG), construct a query
+// as follows:
+//
+//	hqb := new(HuxQueryBuilder)
+//	hq := hqb.QueryStation("KGX").FilterTo().FilterStation("CBG").Build()
+//
+// A QueryStation() must always be provided as the base of the query, and
+// note that the direction of travel must be specified with FilterFrom()
+// or FilterTo() if an additional station discriminator is provided.
+//
+// If you prefer, full station names may be used in place of three character
+// CRS codes:
+//
+//	hqb := new(HuxQueryBuilder)
+//	hq := hqb.QueryStation("Cambridge").FilterFrom().FilterStation("Kings Cross").Build()
+//
+type HuxQueryBuilder struct {
 	queryStation    string
 	filterDirection string
 	filterStation   string
 	numRows         int
 }
 
-// QueryStation sets the station for which the arrivals and departures are to be retrieved.
-func (qb *QueryBuilder) QueryStation(station string) *QueryBuilder {
+// QueryStation sets the base station for the constructed query, must always be provided.
+func (qb *HuxQueryBuilder) QueryStation(station string) *HuxQueryBuilder {
 	qb.queryStation = station
 	return qb
 }
 
-// FilterTo sets the query to destination mode.
-func (qb *QueryBuilder) FilterTo() *QueryBuilder {
+// FilterTo sets the direction of travel to select trains towards the FilterStation discriminator.
+func (qb *HuxQueryBuilder) FilterTo() *HuxQueryBuilder {
 	qb.filterDirection = "to"
 	return qb
 }
 
-// FilterFrom sets the query to origin mode.
-func (qb *QueryBuilder) FilterFrom() *QueryBuilder {
+// FilterFrom sets the direction of travel to select trains from the FilterStation discriminator.
+func (qb *HuxQueryBuilder) FilterFrom() *HuxQueryBuilder {
 	qb.filterDirection = "from"
 	return qb
 }
 
-// FilterStation sets the origin or destination filter as selected by FilterFrom or FilterTo
-func (qb *QueryBuilder) FilterStation(station string) *QueryBuilder {
+// FilterStation sets the query to select only trains To or From that station.
+func (qb *HuxQueryBuilder) FilterStation(station string) *HuxQueryBuilder {
 	qb.filterStation = station
 	return qb
 }
 
-// NumRows limits the number of train services listed in the query response.
-func (qb *QueryBuilder) NumRows(rows int) *QueryBuilder {
+// NumRows limits the number of result rows returned by the API.
+func (qb *HuxQueryBuilder) NumRows(rows int) *HuxQueryBuilder {
 	qb.numRows = rows
 	return qb
 }
 
-// Build finalises the parameters in the QueryBuilder into a formatted huxQuery string.
-func (qb *QueryBuilder) Build() huxQuery {
+// Build finalizes the HuxQueryBuilder into a formatted huxQuery query string usable by hux Get methods.
+func (qb *HuxQueryBuilder) Build() huxQuery {
 	if qb.queryStation == "" {
 		panic("Query station must be set")
 	}
